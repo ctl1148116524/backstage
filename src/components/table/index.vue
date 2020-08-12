@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-08-08 13:17:37
- * @LastEditTime: 2020-08-11 20:18:23
+ * @LastEditTime: 2020-08-12 13:51:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \app\src\components\table\index.vue
@@ -156,7 +156,7 @@ export default {
   },
   created: function() {
     switch (this.$route.name) {
-      case "home":
+      case "company":
         this.tablename = company.tablename;
         this.lists = company.head;
         this.get_tabledata(companylist, 1, this.page_size);
@@ -294,7 +294,7 @@ export default {
     handleCurrentChange(val) {
       //点击分页
       switch (this.$route.name) {
-        case "home":
+        case "company":
           this.get_tabledata(companylist, val, this.page_size);
           break;
         case "department":
