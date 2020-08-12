@@ -1,0 +1,44 @@
+{
+  "id": "1993225",
+  "name": "后台",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "680986",
+      "name": "企业2",
+      "font_class": "qiye2",
+      "unicode": "e725",
+      "unicode_decimal": 59173
+    },
+    {
+      "icon_id": "9752800",
+      "name": "企业",
+      "font_class": "qiye",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "3199565",
+      "name": "部门计划",
+      "font_class": "drxx45",
+      "unicode": "e709",
+      "unicode_decimal": 59145
+    },
+    {
+      "icon_id": "5412484",
+      "name": "资产",
+      "font_class": "zichan-copy-copy",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "6364167",
+      "name": "二维码",
+      "font_class": "ico",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    }
+  ]
+}

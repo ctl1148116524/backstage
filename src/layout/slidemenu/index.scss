@@ -1,0 +1,22 @@
+.el-menu {
+  border-right: 0px;
+  .iconfont,
+  i {
+    font-size: 1.3rem;
+    margin-right: 20px;
+    vertical-align: middle;
+    & + span {
+      font-size: 1.2rem;
+      letter-spacing: 5px;
+    }
+  }
+}
+.el-menu-item:not(.is-active) i {
+  color: #f1f1f1;
+}
+
+/**解决导航栏折叠卡顿**/
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}

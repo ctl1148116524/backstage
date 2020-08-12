@@ -1,0 +1,42 @@
+.head {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  justify-content: space-between;
+  .name {
+    display: flex;
+    align-items: center;
+    > i {
+      font-size: 1.6rem;
+      color: #304156;
+      cursor: pointer;
+    }
+    h3 {
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      color: #304156;
+      margin-left: 15px;
+    }
+  }
+  .user {
+    > .el-dropdown {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+.el-dropdown-link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #304156;
+  font-size: 1rem;
+  margin-left: 5px;
+  > .el-avatar {
+    margin-right: 5px;
+  }
+}
+.el-icon-arrow-down {
+  font-size: 1rem;
+}
