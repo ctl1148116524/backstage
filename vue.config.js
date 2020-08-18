@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-16 20:24:09
- * @LastEditTime: 2020-08-10 09:54:45
+ * @LastEditTime: 2020-08-18 10:43:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \app\vue.config.js
@@ -11,7 +11,13 @@ const CompressionPlugin = require("compression-webpack-plugin");
 function resolve(dir) {
   return path.join(__dirname, dir); //path.join(__dirname)设置绝对路径
 }
-
+//css sourceMap 查看css源码位置
+var csssourceMap;
+if (process.env.NODE_ENV === "production") {
+  csssourceMap = false;
+} else {
+  csssourceMap = true;
+}
 module.exports = {
   publicPath: "./",
   outputDir: "dist",
@@ -38,7 +44,7 @@ module.exports = {
   },
   chainWebpack(config) {
     // config.plugin("html").tap((args) => {
-     // console.log(args)
+    // console.log(args)
     //   args[0].title = ""; //默认标题
     //   return args;
     // });
@@ -81,34 +87,25 @@ module.exports = {
     //console.log(config, "chainWebpack");
   },
   configureWebpack: (config) => {
-    //console.log(config);
     if (process.env.NODE_ENV === "production") {
       // 为生产环境修改配置...
-      return {
-        plugins: [
-          new CompressionPlugin({
-            //开启gzip压缩
-            test: /\.(js|css)(\?.*)?$/,
-            filename: "[path].gz[query]",
-            algorithm: "gzip",
-            threshold: 10240, //10kb
-            minRatio: 0.8,
-          }),
-        ],
-        // externals: {
-        //   vant: "vant", // 配置使用CDN
-        //   Vue: "vue", // 配置使用CDN
-        // },
-      };
+      config.plugins.push(
+        new CompressionPlugin({
+          //开启gzip压缩
+          test: /\.(js|css)(\?.*)?$/,
+          filename: "[path].gz[query]",
+          algorithm: "gzip",
+          threshold: 10240, //10kb
+          minRatio: 0.8,
+        })
+      );
     } else {
       // 为开发环境修改配置...
-      return {
-        devtool: "eval-source-map",
-        // externals: {
-        //   vant: "vant", // 配置使用CDN
-        //   Vue: "vue", // 配置使用CDN
-        // },
-      };
+      config.devtool = "eval-source-map";
     }
+    // console.log(config.plugins);
+  },
+  css: {
+    sourceMap: csssourceMap,
   },
 };
